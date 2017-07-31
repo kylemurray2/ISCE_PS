@@ -9,7 +9,7 @@ ry           = rx*pixel_ratio;
 
 if(iter)
     display('Using TS/gamma0.r4 file for a subsequent iteration')
-    for i=1:nints
+    parfor i=1:nints
             system(['rm ' ints(i).flat '_filt ' ints(i).flat '_diff']);
             filter_diff_iter(ints(i).int,[ints(i).flat '_filt'],[ints(i).flat '_diff'], nx,ny,rx,ry,gammafile,1.5);
             snapnow;
